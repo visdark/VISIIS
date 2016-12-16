@@ -1,18 +1,30 @@
 {
   "name": "VISIIS",
-  "description": "my frist workpace",
-  "author": "visdark",
+  "description": "my first project！",
   "version": "0.0.1",
-  "license": "MIT",
+  "keywords": [
+    "css",
+    "sass",
+    "web"
+  ],
+  "homepage": "https://visdark.com",
+  "author": "visdark",
   "repository": {
     "type": "git",
     "url": "https://github.com/visdark/VISIIS.git"
   },
+  "license": "MIT",
   "devDependencies": {
     "browser-sync": "^2.18.5",
+    "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^2.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-header": "^1.8.8",
     "gulp-imagemin": "^3.1.1",
     "gulp-less": "^3.3.0",
-    "gulp-sass": "^3.0.0"
-
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.0.0",
+    "gulp-uglify": "^2.0.0",
+    "run-sequence": "^1.2.2"
   }
 }
