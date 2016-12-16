@@ -7,14 +7,14 @@ visiis 视觉前端 —— 专注于前端的网站构架师
 
 项目构建比较有名的有：
 
-* gulp 杯子——基于流的自动化构建工具。
-* webpack
-* grunt 大牛咕噜
+* gulp 杯水——基于流的自动化构建工具。
+* webpack  
+* grunt 大牛——基于IO
 
 CSS 构建环境：
 
 * sass
-* less 一种动态样式语言
+* less 
 
 JS 框架
 
