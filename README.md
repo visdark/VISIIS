@@ -27,3 +27,12 @@ UI 框架和字体库
 * Font Awesome 
 * 阿里云
 
+## 2016-12-16
+
+
+### 构架gulp环境，添加必要的插件
+
+* BrowserSync：npm install --save-dev browser-sync 　浏览器同步测试
+* gulp-imagemin: 压缩图片大小
+* sass和less插件：npm install --save-dev gulp-sass css构建工具
+* css压缩：npm install gulp-minify-css
