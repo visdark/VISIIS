@@ -1,16 +1,27 @@
+body {
+  font-family: Helvetica, "Segoe UI Light", "Segoe UI", "Microsoft Jhenghei", sans-serif;
+  width: 100%;
+}
 img {
   border-style: none;
   max-width: 100%;
   height: auto;
   display: block;
 }
-
-
-img {
-  border-style: none;
-  max-width: 100%;
-  height: auto;
-  display: block;
+h1 {
+  color: #FF4136;
+  font-size: 30px;
+}
+h2 {
+  color: #0074D9;
+}
+h3 {
+  color: #2ECC40;
+}
+#content {
+  position: relative;
+  width: 10rem;
+  margin: 0 auto;
 }
 
 button,
@@ -19,47 +30,24 @@ optgroup,
 select,
 textarea {
   font-family: sans-serif;
-  /* 1 */
   font-size: 100%;
-  /* 1 */
   line-height: 1.15;
-  /* 1 */
   margin: 0;
-  /* 2 */
 }
-/**
- * Show the overflow in IE.
- * 1. Show the overflow in Edge.
- */
 button,
 input {
-  /* 1 */
   overflow: visible;
 }
-/**
- * Remove the inheritance of text transform in Edge, Firefox, and IE.
- * 1. Remove the inheritance of text transform in Firefox.
- */
 button,
 select {
-  /* 1 */
   text-transform: none;
 }
-/**
- * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
- *    controls in Android 4.
- * 2. Correct the inability to style clickable types in iOS and Safari.
- */
 button,
 html [type="button"],
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: button;
-  /* 2 */
 }
-/**
- * Remove the inner border and padding in Firefox.
- */
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
@@ -67,9 +55,6 @@ button::-moz-focus-inner,
   border-style: none;
   padding: 0;
 }
-/**
- * Restore the focus styles unset by the previous rule.
- */
 button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
@@ -96,50 +81,26 @@ progress {
 textarea {
   overflow: auto;
 }
-/**
- * 1. Add the correct box sizing in IE 10-.
- * 2. Remove the padding in IE 10-.
- */
 [type="checkbox"],
 [type="radio"] {
   box-sizing: border-box;
-  /* 1 */
   padding: 0;
-  /* 2 */
 }
-/**
- * Correct the cursor style of increment and decrement buttons in Chrome.
- */
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
-/**
- * 1. Correct the odd appearance in Chrome and Safari.
- * 2. Correct the outline style in Safari.
- */
 [type="search"] {
   -webkit-appearance: textfield;
-  /* 1 */
   outline-offset: -2px;
-  /* 2 */
 }
-/**
- * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
- */
 [type="search"]::-webkit-search-cancel-button,
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
-/**
- * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
- */
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
-  /* 1 */
   font: inherit;
-  /* 2 */
 }
 
 html {
@@ -241,10 +202,6 @@ canvas {
 audio:not([controls]) {
   display: none;
   height: 0;
-}
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0px;
 }
 svg:not(:root) {
   overflow: hidden;

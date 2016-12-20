@@ -1,0 +1,12 @@
+img {
+  border-style: none;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+h1 {
+  color: #FF4136;
+}
+h2 {
+  color: #0074D9;
+}

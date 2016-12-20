@@ -47,7 +47,7 @@ gulp.task('build-html',function(){
 });
 //任务：压缩css
 gulp.task('stylesheets',['build-less'], function() {
-    gulp.src(['./dist/css/*.css'])
+    gulp.src(['./dist/css/vis-*.css'])
         .pipe(concat('visi.css'))
         .pipe(gulp.dest('./dist/css/'))
         .pipe(rename({ suffix: '.min' }))

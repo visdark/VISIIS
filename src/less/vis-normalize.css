@@ -98,10 +98,6 @@ audio:not([controls]) {
   display: none;
   height: 0;
 }
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0px;
-}
 svg:not(:root) {
   overflow: hidden;
 }
