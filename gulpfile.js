@@ -84,6 +84,7 @@ gulp.task('fileinclude', function() {
 gulp.task('develop',function(callback){
     runSequence(['build-less','fileinclude'],['stylesheets','javascripts','build-html'], 'browser', callback);
     gulp.watch('./src/less/*.less', ['build-less']);
+    gulp.watch('./src/html/**/*.html', ['fileinclude']);
 });
 
 //任务：浏览器测试
