@@ -18,8 +18,7 @@ var gulp = require('gulp'), //构建gulp
     debug = require('gulp-debug'); //任务提示
     browserSync = require('browser-sync').create(); //浏览器测试
     git = require('gulp-git'); //上传下载
-    fs = require('fs'); //写入文件
-    replace = require('gulp-replace'); //
+    fileinclude  = require('gulp-file-include');
     banner = ['/**',
     ' * <%= pkg.name %> - <%= pkg.description %>',
     ' * @version v<%= pkg.version %>',
@@ -71,33 +70,21 @@ gulp.task('javascripts', function() {
 });
 
 //引入头部底部
-gulp.task('include', function() {
-    var htmlDir = './src/html/';
-    fs.readdir(htmlDir, function(err, files) {
-        if (err) {
-            console.log(err);
-        } else {
-            files.forEach(function(f) {
-                if (f !== '_header.html' && f !== '_footer.html') {
-                    gulp.src(htmlDir + f)
-                        .pipe(replace(/<!--header-->[\s\S]*<!--headerend-->/, '<!--header-->\n' + fs.readFileSync(htmlDir + '_header.html', 'utf-8') + '\n<!--headerend-->'))
-                .pipe(replace(/<!--footer-->[\s\S]*<!--footerend-->/, '<!--footer-->\n' + fs.readFileSync(htmlDir + '_footer.html', 'utf-8') + '\n<!--footerend-->'))
-                .pipe(gulp.dest('./src/'))
-                }
-            });
-        }
-    });
-});
-gulp.task('watch', function() {
-    gulp.watch(['./html/_header.html', './html/_footer.html'], ['include']);
+gulp.task('fileinclude', function() {
+    // 适配html中所有文件夹下的所有html，排除html下的include文件夹中html
+    gulp.src(['./src/html/**/*.html','!./src/html/include/**.html'])
+        .pipe(fileinclude({
+            prefix: '@@',
+            basepath: '@file'
+        }))
+        .pipe(gulp.dest('./src/'));
 });
 
 //检视less改动
 gulp.task('develop',function(callback){
-    runSequence(['build-less','include'],['stylesheets','javascripts','build-html'], 'browser', callback);
+    runSequence(['build-less','fileinclude'],['stylesheets','javascripts','build-html'], 'browser', callback);
     gulp.watch('./src/less/*.less', ['build-less']);
 });
-
 
 //任务：浏览器测试
 gulp.task('browser', function() {
