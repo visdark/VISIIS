@@ -2,6 +2,7 @@
 body {
     font-family: Helvetica, "Segoe UI Light","Segoe UI","Microsoft Jhenghei",sans-serif;
     width: 100%;
+    background-color:#eee;
 }
 // 图片相关
 img {
@@ -11,7 +12,11 @@ img {
     display: block;
 }
 // 按钮样式 有一个最大的按钮样式库 在这里我们可以挑选一个自己最喜欢的按钮样式 http://www.bootcss.com/p/buttons/
+div{
 
+font-size:12px
+}
+// 字体大小重置
 h1{color: @red;font-size: 1rem;}
 h2{color: @blue;font-size: 0.75rem;}
 h3{color: @green;font-size: 0.5rem;}
@@ -23,4 +28,23 @@ h6{color: @green;font-size: 0.2rem;}
     position: relative;
     width: 10rem;
     margin: 0 auto;
+    font-size: 12px;
+    background-color: white;
+}
+// 顶部广告条 样式表
+#top-ad .top-notice{
+    position: absolute;
+    top: 0;
+    width: 10rem;
+    color: black;
+    display: block;
+    z-index: 100;
+    text-align: center;
+}
+#top-ad .top-notice ul {
+    padding: .1rem;
+    background-color: @silver;
+    margin: .1rem;
+    border-radius: 100px;
+    font-size: .1rem;
 }

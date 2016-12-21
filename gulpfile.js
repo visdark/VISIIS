@@ -5,6 +5,7 @@
 //导入工具包
 var gulp = require('gulp'), //构建gulp
     plugins = require('gulp-load-plugins')();//读取构建模块
+    imagemin = require('gulp-imagemin'); //压缩图片文档
     less = require('gulp-less'); //less支持
     pkg = require('./package.json'); //配置数据
     clean = require('gulp-clean'); //清除多余文件
@@ -16,7 +17,7 @@ var gulp = require('gulp'), //构建gulp
     concat = require('gulp-concat'); //合并文件
     runSequence = require('run-sequence');//异步执行
     debug = require('gulp-debug'); //任务提示
-    template = require('gulp-template');
+    template = require('gulp-template'); //动态数据加载
     browserSync = require('browser-sync').create(); //浏览器测试
     git = require('gulp-git'); //上传下载
     fileinclude  = require('gulp-file-include');
@@ -53,6 +54,14 @@ gulp.task('build-html',function(){
             removeComments: true}))
         .pipe(gulp.dest('./dist/'));
 });
+
+// 任务：压缩图片
+gulp.task('build-img', function(){
+     gulp.src('./src/img/*.png')
+         .pipe(gulp.dest('./dist/img/'));
+});
+
+
 //任务：压缩css
 gulp.task('stylesheets',['build-less'], function() {
     gulp.src(['./dist/css/vis-*.css'])
@@ -67,7 +76,7 @@ gulp.task('stylesheets',['build-less'], function() {
 
 // 合并，压缩js文件
 gulp.task('javascripts', function() {
-    gulp.src('./src/js/*.js')
+    gulp.src('./src/js/vis-*.js')
         .pipe(concat('visi.js'))
         .pipe(gulp.dest('./dist/js'))
         .pipe(rename({ suffix: '.min' }))
@@ -90,7 +99,7 @@ gulp.task('fileinclude', function() {
 
 //检视less改动
 gulp.task('develop',function(callback){
-    runSequence('fxbtg-data',['build-less','fileinclude'],['stylesheets','javascripts','build-html'], 'browser', callback);
+    runSequence('fxbtg-data',['build-img', 'build-less','fileinclude'],['stylesheets','javascripts','build-html'], 'browser', callback);
     gulp.watch('./src/less/*.less', ['build-less']);
     gulp.watch('./src/html/**/*.html', ['fileinclude']);
     gulp.watch('./src/html/vis/*.html', ['fxbtg-data']);

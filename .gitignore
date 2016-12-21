@@ -35,3 +35,19 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+.idea/workspace.xml
+app/
+dist/html/
+dist/img/
+plug-in/
+src/html/vis/
+src/vis/
+dist/css/vis-a-normalize.css
+dist/favicon.png
+src/js/vis-flexible.js
+src/js/vis-flexible_css.js
+src/js/vue.js
+src/less/base.css
+src/less/vis-a-normalize.css
+src/less/vis-a-normalize.less
+src/less/vis-base.css

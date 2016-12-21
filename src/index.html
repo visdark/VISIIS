@@ -2,6 +2,8 @@
 <html lang="en" id="fxbtg">
 <head>
     <meta charset="UTF-8">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="Shortcut Icon" href="favicon.png" type="image/x-icon">
     <title>VISIIS</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,11 +12,9 @@
     <meta name="keywords" content="css,sass,web"/>
     <meta name="description" content="my first project！"/>
     <!-- CSS 开始 -->
-
-    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <script src="js/visi.min.js"></script>
     <!-- 高清手机适配方案↑ -->
     <link rel="stylesheet" href="css/visi.min.css"> <!-- 标准化 -->
-
     <!-- CSS 结束 -->
 </head>
 
@@ -23,38 +23,110 @@
 <header>
     <h1>这里是通用头部区域</h1>最新
     <hr />VISIIS
-</header>
-<section id="content">
-    <h2>原始样式开始1111333444555   </h2>
-    <h3>段落代码</h3>
-    <hr />
-    FXBTG <abbr title="{{描述}}">{{abbr}}</abbr> 是香港大旗金融集团有限公司的缩写。 <br />
-    <a href="#">{{a}}</a><b>{{b}}</b>和<strong>{{strong}}</strong>其实都是一个意思。
-    <form>
-        <fieldset>
-            <legend>健康信息</legend>
-            身高：<input type="text" />
-            体重：<input type="text" />
-        </fieldset>
-    </form>
-    下载进度：
-    <progress value="22" max="100">
-    </progress>
 
-    <p><b>注释：</b>Internet Explorer 9 以及更早的版本不支持 <progress> 标签。</p>
-    <h3>标题样式111</h3>
-    <hr />
-    <details>
-        <summary>HTML 5</summary>
-        This document teaches you everything you have to learn about HTML 5.
-    </details>
-    <h1>{{H1}}</h1>
-    <h2>{{H2}}</h2>
-    <h3>{{H3}}</h3>
-    <h4>{{H4}}</h4>
-    <h5>{{H5}}</h5>
-    <h6>{{H6}}</h6>
-</section>
+
+</header>
+<div id="content">
+    <section id="top-ad">
+        <link rel="stylesheet" href="css/swiper.min.css">
+        <style>
+            .swiper-container {
+                width: 100%;
+                height: auto;
+                margin: 0;
+                position: relative;
+            }
+            .swiper-slide {
+                text-align: center;
+                font-size: 18px;
+                background: #fff;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                -webkit-justify-content: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                -webkit-align-items: center;
+                align-items: center;
+            }
+        </style>
+        <!-- Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">  <img src="img/top-ad.png"/> </div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+            </div>
+            <div class="top-notice">
+                <ul>
+                <li>FXBTG关于2016感恩节部分产品交易时间变更通知FXBTG关于2016感恩节部分产品交易时间变更通知</li>
+                </ul>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <!-- Swiper JS -->
+        <script src="js/swiper.min.js"></script>
+
+        <!-- Initialize Swiper -->
+        <script>
+            var swiper = new Swiper('.swiper-container', {
+                pagination: '.swiper-pagination',
+                paginationClickable: true,
+                spaceBetween: 30,
+            });
+        </script>
+
+
+
+        s
+        ssss
+    </section>
+    <section id="box-1">
+
+
+        <img src="img/top-ad.png"/>
+        <img src="index.png"/>
+
+
+        <h2>原始样式开始1111333444555 </h2>
+        <h3>段落代码</h3>
+        <hr/>
+        FXBTG <abbr title="{{描述}}">{{abbr}}</abbr> 是香港大旗金融集团有限公司的缩写。 <br/>
+        <a href="#">{{a}}</a><b>{{b}}</b>和<strong>{{strong}}</strong>其实都是一个意思。
+        <form>
+            <fieldset>
+                <legend>健康信息</legend>
+                身高：<input type="text"/>
+                体重：<input type="text"/>
+            </fieldset>
+        </form>
+        下载进度：
+        <progress value="22" max="100">
+        </progress>
+
+        <p><b>注释：</b>Internet Explorer 9 以及更早的版本不支持
+            <progress> 标签。
+        </p>
+        <h3>标题样式111</h3>
+        <hr/>
+        <details>
+            <summary>HTML 5</summary>
+            This document teaches you everything you have to learn about HTML 5.
+        </details>
+        <h1>{{H1}}</h1>
+        <h2>{{H2}}</h2>
+        <h3>{{H3}}</h3>
+        <h4>{{H4}}</h4>
+        <h5>{{H5}}</h5>
+        <h6>{{H6}}</h6>
+    </section>
+</div>
 
 2222222
 </body>
