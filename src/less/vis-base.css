@@ -10,13 +10,27 @@ img {
 }
 h1 {
   color: #FF4136;
-  font-size: 30px;
+  font-size: 1rem;
 }
 h2 {
   color: #0074D9;
+  font-size: 0.75rem;
 }
 h3 {
   color: #2ECC40;
+  font-size: 0.5rem;
+}
+h4 {
+  color: #FF4136;
+  font-size: 0.4rem;
+}
+h5 {
+  color: #0074D9;
+  font-size: 0.3rem;
+}
+h6 {
+  color: #2ECC40;
+  font-size: 0.2rem;
 }
 #content {
   position: relative;

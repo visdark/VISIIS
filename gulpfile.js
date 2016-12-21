@@ -16,6 +16,7 @@ var gulp = require('gulp'), //构建gulp
     concat = require('gulp-concat'); //合并文件
     runSequence = require('run-sequence');//异步执行
     debug = require('gulp-debug'); //任务提示
+    template = require('gulp-template');
     browserSync = require('browser-sync').create(); //浏览器测试
     git = require('gulp-git'); //上传下载
     fileinclude  = require('gulp-file-include');
@@ -27,6 +28,13 @@ var gulp = require('gulp'), //构建gulp
     ' */',
     ''].join('\n'); //版权说明
 
+//动态属性值调用
+gulp.task('fxbtg-data', function(){
+    gulp.src('./src/html/vis/*.html')
+        .pipe(template())
+        .pipe(gulp.dest('./src/html/include/'));
+    }
+);
 
 //任务：less文件转化css
 // less解析
@@ -82,9 +90,10 @@ gulp.task('fileinclude', function() {
 
 //检视less改动
 gulp.task('develop',function(callback){
-    runSequence(['build-less','fileinclude'],['stylesheets','javascripts','build-html'], 'browser', callback);
+    runSequence('fxbtg-data',['build-less','fileinclude'],['stylesheets','javascripts','build-html'], 'browser', callback);
     gulp.watch('./src/less/*.less', ['build-less']);
     gulp.watch('./src/html/**/*.html', ['fileinclude']);
+    gulp.watch('./src/html/vis/*.html', ['fxbtg-data']);
 });
 
 //任务：浏览器测试
