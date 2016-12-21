@@ -1,12 +1,16 @@
 body {
   font-family: Helvetica, "Segoe UI Light", "Segoe UI", "Microsoft Jhenghei", sans-serif;
   width: 100%;
+  background-color: #eee;
 }
 img {
   border-style: none;
   max-width: 100%;
   height: auto;
   display: block;
+}
+div {
+  font-size: 12px;
 }
 h1 {
   color: #FF4136;
@@ -36,4 +40,22 @@ h6 {
   position: relative;
   width: 10rem;
   margin: 0 auto;
+  font-size: 12px;
+  background-color: white;
+}
+#top-ad .top-notice {
+  position: absolute;
+  top: 0;
+  width: 10rem;
+  color: black;
+  display: block;
+  z-index: 100;
+  text-align: center;
+}
+#top-ad .top-notice ul {
+  padding: .1rem;
+  background-color: #DDDDDD;
+  margin: .1rem;
+  border-radius: 100px;
+  font-size: .1rem;
 }
