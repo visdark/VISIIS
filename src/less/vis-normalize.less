@@ -1,0 +1,115 @@
+// vis-normalize.css 基本样式重置 normalize.css v5.0.0提供代码支持
+
+// 基本设置
+html {
+    font-family: sans-serif; // 无衬线
+    line-height: 1.18; // 高度1.15 留有一些空隙 但是不唐突
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%; // 确保移动端保持大小一致为100%
+}
+body {
+    margin: 0;
+}
+article,
+aside,
+footer,
+header,
+nav,
+section,
+figcaption,
+figure,
+main,
+details,
+menu{
+  display: block; // IE9以下未声明的块结构 当然在移动端这个无所谓了
+}
+figure {
+    margin: 1em 2em; // HTML5中定义图文的块
+}
+hr {
+    box-sizing: content-box;
+    height: 0; // 防止溢出
+    overflow: visible; // 防止修剪
+}
+pre {
+    font-family: monospace, monospace;
+    font-size: 1em; // 预格式化文本
+}
+a {
+    background-color: transparent; // 防止IE10活动链接自动加入灰背景
+    -webkit-text-decoration-skip: objects; // 防止IOS8以上空白链接自动加入下划线
+}
+a:active,
+a:hover {
+    outline-width: 0; // 防止点击时的虚线边框
+}
+abbr[title] {
+    border-bottom: none; // 防止火狐下边框不统一
+    text-decoration: underline;
+    text-decoration: underline dotted; // 统一加入下划线
+}
+.hidden,   // 隐藏属性
+[hidden] {
+    display: none !important;
+}
+b,
+strong {
+  font-weight: inherit;
+}
+b,
+strong {
+  font-weight: bolder;
+} // 加粗字体样式
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; //代码字体
+  font-size: 0.75em; //代码字号
+}
+dfn {
+  font-style: italic; //斜体参数
+}
+mark {
+  background-color: #ff0; //高亮显示
+  color: #000;//高亮显示 这个可以定义为主色调相关的
+}
+small {
+  font-size: 80%; //字体变小
+}
+big{
+  font-size: 120%; //字体变大
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}//上标和下标的属性
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+} //上标和下标的位置
+audio,
+video,
+canvas{
+  display: inline-block;
+} //媒体标签初始化内盒子模型
+audio:not([controls]) {
+  display: none;
+  height: 0;
+} //苹果浏览器播放显示重置
+svg:not(:root) {
+  overflow: hidden;
+} //SVG支持中溢出隐藏
+//表单的一些内容，具体改动结合 vis-from 在此不做赘述
+summary {
+  display: list-item;
+}
+//手风琴标签 仅支持高级浏览器
+template {
+  display: none;
+}
+//模板标签
