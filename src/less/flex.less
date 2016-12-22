@@ -1,0 +1,195 @@
+// flex响应式布局
+@import "base.less";
+@flex-base: 1.666667rem;
+
+.box {
+  width: 10rem;
+  height: 5rem;
+  background-color: white;
+}
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+.wrap {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.col {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+.column {
+  flex-direction: column;
+  height:100%;
+}
+
+// 六格子
+.col-1 {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 @flex-base;
+  flex: 0 0 @flex-base;
+  max-width: @flex-base;
+}
+.col-2 {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 (@flex-base * 2) ;
+  flex: 0 0 (@flex-base * 2);
+  max-width: (@flex-base * 2);
+}
+.col-3 {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 5rem;
+  flex: 0 0 5rem;
+  max-width: 5rem;
+}
+.col-4 {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 (@flex-base * 4) ;
+  flex: 0 0 (@flex-base * 4);
+  max-width: (@flex-base * 4);
+}
+.col-5 {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 (@flex-base * 5) ;
+  flex: 0 0 (@flex-base * 5);
+  max-width: (@flex-base * 5);
+}
+.col-6 {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 10rem;
+  flex: 0 0 10rem;
+  max-width: 10rem;
+}
+// 自适应
+.avg-4>.col, .avg-4>div, .avg-4>li {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 25%;
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+.avg-4.bordered > .col:nth-of-type(4n):before, .avg-4 > div:nth-of-type(4n):before, .avg-4 > li:nth-of-type(4n):before {
+  display: none
+}
+.avg-5>.col, .avg-5>div, .avg-5>li {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 20%;
+  flex: 0 0 20%;
+  max-width: 20%;
+}
+.avg-5.bordered > .col:nth-of-type(5n):before, .avg-5 > div:nth-of-type(5n):before, .avg-5 > li:nth-of-type(5n):before {
+  display: none
+}
+.avg-6>.col, .avg-6>div, .avg-6>li {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 16.66667%;
+  flex: 0 0 16.66667%;
+  max-width: 16.66667%;
+}
+.avg-6.bordered > .col:nth-of-type(6n):before, .avg-6 > div:nth-of-type(6n):before, .avg-6 > li:nth-of-type(6n):before {
+   display: none
+ }
+.column.bordered > .col:nth-of-type(1n):before, .column > div:nth-of-type(1n):before, .column > li:nth-of-type(1n):before {
+  display: none
+}
+.bordered > .col:nth-last-of-type(1):before, .bordered > div:nth-last-of-type(1):before, .bordered > li:nth-last-of-type(1):before {
+  display: none
+}
+.bordered > .col.no-bordered:before {
+  display: none
+}
+// 声明容器
+.bordered {
+  position: relative;
+}
+.bordered >.col {
+  position: relative;
+}
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .bordered:before, .bordered > .col:after {
+    -webkit-transform: scaleY(.5) translateZ(0);
+    transform: scaleY(.5) translateZ(0)
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 3) {
+  .bordered:before, .bordered > .col:after {
+    -webkit-transform: scaleY(.33) translateZ(0);
+    transform: scaleY(.33) translateZ(0)
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .bordered > .col:before {
+    -webkit-transform: scaleX(.5) translateZ(0);
+    transform: scaleX(.5) translateZ(0)
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 3) {
+  .bordered > .col:before {
+    -webkit-transform: scaleX(.33) translateZ(0);
+    transform: scaleX(.33) translateZ(0)
+  }
+}
+
+
+.bordered:before {
+  top: 0;
+  bottom: auto;
+  border-top: 1px solid @silver;
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0
+}
+
+.bordered:before, .bordered > .col:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: auto;
+  z-index: 15;
+  display: block;
+  box-sizing: content-box;
+  background-color: transparent;
+  width: 100%;
+  height: 1px
+}
+
+.bordered > .col:after {
+  top: auto;
+  bottom: 0;
+  border-bottom: 1px solid @silver;
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%
+}
+
+.bordered > .col {
+  position: relative
+}
+
+.bordered > .col:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  left: auto;
+  z-index: 15;
+  display: block;
+  box-sizing: content-box;
+  background-color: transparent;
+  border-right: 1px solid @silver;
+  width: 1px;
+  height: 100%;
+  -webkit-transform-origin: 100% 50%;
+  transform-origin: 100% 50%
+}

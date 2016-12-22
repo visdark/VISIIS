@@ -14,79 +14,114 @@
     <!-- CSS 开始 -->
     <script src="js/visi.min.js"></script>
     <!-- 高清手机适配方案↑ -->
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_ah0bo16h232fbt9.css"> <!-- 图标库 阿里云在线地址 -->
     <link rel="stylesheet" href="css/visi.min.css"> <!-- 标准化 -->
     <!-- CSS 结束 -->
 </head>
 
 
 <body>
-<header>
-    <h1>这里是通用头部区域</h1>最新
-    <hr />VISIIS
 
-
-</header>
 <div id="content">
     <section id="top-ad">
-        <link rel="stylesheet" href="css/swiper.min.css">
-        <style>
-            .swiper-container {
-                width: 100%;
-                height: auto;
-                margin: 0;
-                position: relative;
-            }
-            .swiper-slide {
-                text-align: center;
-                font-size: 18px;
-                background: #fff;
-                display: -webkit-box;
-                display: -ms-flexbox;
-                display: -webkit-flex;
-                display: flex;
-                -webkit-box-pack: center;
-                -ms-flex-pack: center;
-                -webkit-justify-content: center;
-                justify-content: center;
-                -webkit-box-align: center;
-                -ms-flex-align: center;
-                -webkit-align-items: center;
-                align-items: center;
-            }
-        </style>
-        <!-- Swiper -->
+        <!-- 顶部焦点图 -->
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">  <img src="img/top-ad.png"/> </div>
-                <div class="swiper-slide">Slide 2</div>
-                <div class="swiper-slide">Slide 3</div>
+                <div class="swiper-slide">  <img src="img/top-ad.png"/> </div>
+                <div class="swiper-slide">  <img src="img/top-ad.png"/> </div>
             </div>
             <div class="top-notice">
                 <ul>
-                <li>FXBTG关于2016感恩节部分产品交易时间变更通知FXBTG关于2016感恩节部分产品交易时间变更通知</li>
+                <li><span class="left"><i class="visiis vis-notice"></i></span>FXBTG关于2017油价的通告</li>
                 </ul>
             </div>
-            <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
         </div>
 
-        <!-- Swiper JS -->
-        <script src="js/swiper.min.js"></script>
-
-        <!-- Initialize Swiper -->
+        <!-- 滑动原生插件swiper  -->
+        <!-- 调用焦点图 -->
         <script>
             var swiper = new Swiper('.swiper-container', {
                 pagination: '.swiper-pagination',
-                paginationClickable: true,
                 spaceBetween: 30,
+                centeredSlides: true,
+                autoplay: 5000,
+                autoplayDisableOnInteraction: false,
+                loop: true
             });
         </script>
-
-
-
-        s
-        ssss
     </section>
+    <br />
+    <div class="flex box wrap avg-4 bordered">
+        <a class="col pro" href="#">
+            <img src="img/p-1.png"/>
+            <P>外汇</P>
+
+
+        </a>
+        <a class="col pro" href="#"><img src="img/p-2.png"/>
+        <P>贵金属</P>
+        </a>
+        <a class="col pro" href="#"><img src="img/p-3.png"/>
+            <P>能源</P></a>
+        <a class="col pro" href="#"><img src="img/p-4.png"/>
+            <P>股指</P></a>
+        <a class="col pro" href="#"><img src="img/p-5.png"/>
+            <P>农产品</P>
+        </a>
+        <a class="col pro" href="#"><img src="img/p-6.png"/>
+            <P>差价合约</P></a>
+        <a class="col pro" href="#"><img src="img/p-7.png"/>
+            <P>原油</P>
+        </a>
+        <a class="col pro" href="#"><img src="img/p-8.png"/>
+            <P>其他</P>
+        </a>
+    </div>
+    <h1>判断字体数量和溢出标题示范开始了</h1>
+    <h2>判断字体数量和溢出标题示范开始了</h2>
+    <h3>判断字体数量和溢出标题示范开始了</h3>
+    <h4>判断字体数量和溢出标题示范开始了</h4>
+    <h5>判断字体数量和溢出标题示范开始了</h5>
+    <h6>判断字体数量和溢出标题示范开始了</h6>
+基本样式
+    <div class="flex box bordered"><div class="col">col</div><div class="col">col</div></div>
+    <br />
+    <div class="flex box bordered"><div class="col">col</div><div class="col">col</div>
+
+        <div class="col"> <div class="flex column bordered">
+            <div class="col">col</div>
+            <div class="col">col</div>
+            <div class="col">col</div>
+        </div></div>
+
+    </div>
+    <br />
+    <div class="box">
+    <div class="flex column bordered">
+        <div class="col">col</div>
+        <div class="col">col</div>
+        <div class="col">col</div>
+    </div></div>
+    <br />
+
+        <div class="flex box wrap bordered">
+        <div class="col col-3 no-bordered">col-3</div><div class="col col-4 no-bordered">col-4</div>
+        <div class="col col-5 no-bordered">col-5</div><div class="col col-6 no-bordered">col-6</div>
+        <div class="col col-1">col-1</div><div class="col col-1">col-1</div>
+        <div class="col col-2">col-2</div><div class="col col-1">col-1</div>
+        <div class="col col-1 no-bordered">col-1</div><div class="col col-3">col-3</div>
+        <div class="col col-1">col-1</div><div class="col col-1">col-1</div>
+        <div class="col col-1 no-bordered">col-1</div><div class="col col-1">col-1</div>
+        </div>
+    <br />
+    <div class="flex box wrap avg-5 bordered">
+        <div class="col">col</div><div class="col">col</div><div class="col">col</div><div class="col">col</div><div class="col">col</div><div class="col">col</div><div class="col">col</div><div class="col">col</div><div class="col">col</div>
+        <div class="col">col</div><div class="col">col</div><div class="col">col</div><div class="col">col</div><div class="col">col</div><div class="col">col</div><div class="col">col</div><div class="col">col</div><div class="col">col</div>
+
+    </div>
+<br />
     <section id="box-1">
 
 
@@ -128,7 +163,7 @@
     </section>
 </div>
 
-2222222
+页脚
 </body>
 
 </html>
