@@ -227,3 +227,6 @@ summary {
 template {
   display: none;
 }
+a:link {
+  text-decoration: none;
+}
