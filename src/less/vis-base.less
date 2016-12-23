@@ -22,12 +22,22 @@ div{
 a{
   color: @color;
 }
+.space{
+  width: 10rem;
+  height: .2rem;
+  overflow: hidden;
+  border-top: solid 1px @gray;
+}
+.ellipsis{
+text-overflow : ellipsis;
+white-space: nowrap;
+overflow: hidden;}
 //强制样式表倍率
 // 字体大小重置
 h1{color: @red;font-size: @XXL;}
 h2{color: @blue;font-size: @XL;}
 h3{color: @green;font-size: @L;}
-h4{color: @red;font-size: @M;}
+h4{font-size: @M;}
 h5{color: @blue;font-size: @S;}
 h6{color: @green;font-size: @XS;}
 // 主页面居中
@@ -53,11 +63,10 @@ h6{color: @green;font-size: @XS;}
       background-color: @silver;
       margin: .1rem 1rem;
       border-radius: 100px;
-      font-size: @S;
       li{
-        text-overflow : ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
+        .ellipsis;
+        height: (@S * 1.5);
+        line-height: (@S * 1.5);
       }
     }
   }
@@ -80,21 +89,147 @@ h6{color: @green;font-size: @XS;}
   margin-top: .5em;
 }
 // 图片排版
-a.pro{
+.box a.pro{
   img{
     width: 1.5rem;
     height: 1.5rem;
     display: block;
-    margin: 0 auto;
-    padding-top: .25rem;
+    margin: .25rem auto 0 auto;
   }
   p{
-     width:2.5rem ;
+    width: 100% ;
     height:.5rem ;
     padding-bottom: .25rem;
     font-size: @M;
     text-align: center;
     color: @black;
     font-weight: bolder;
+  }
+}
+.box .ad{
+  position: relative;
+  width: 5rem;
+  height: 2.5rem;
+  display: block;
+  img{
+    position: absolute;
+  }
+  .con{
+    padding: .25rem;
+    position: absolute;
+    color: @black;
+    h4{
+      font-size: @L;
+      font-weight: bolder;
+      height: 0.8rem;
+      line-height: 0.8rem;
+
+    }
+    p{
+      font-size: @S;
+      height: 0.6rem;
+      line-height: 0.6rem;
+      .ellipsis;
+    }
+    span.btn{
+      font-size: .2rem;
+      width: 1.2rem;
+      padding: .1rem;
+      line-height: .2rem;
+      display: block;
+      border: solid 1px @silver;
+      border-radius: 100px;
+      text-align: center;
+      .ellipsis;
+    }
+  }
+}
+a.box-a{
+  width: 5rem;
+  height: 2.5rem;
+  background-color: #00b3ee;
+  position: relative;
+  display: block;
+  img{
+    position: absolute;
+  }
+}
+#news .box-act {
+  background-color: white;
+  overflow: hidden;
+  .tit {
+    padding: .2rem;
+    border-bottom: 1px solid @silver;
+    font-size: @M;
+  }
+  .con {
+    padding: .2rem 0 0 .2rem;
+    .col-left {
+      width: 9.8rem;
+      justify-content: space-between;
+      a.col {
+        display: block;
+        padding-bottom:.2rem ;
+          .new-pics{
+            display: block;
+            padding-right: .2rem;
+            color: @black;
+            img {
+              height: auto;
+            }
+            h4{
+                font-size: @M;
+              height: 0.6rem;
+              line-height: 0.6rem;
+              .ellipsis;
+            }
+
+            p{
+              font-size: @S;
+              color: @gray;
+              height: 0.3rem;
+              line-height: 0.3rem;
+              .ellipsis;
+            }
+          }
+      }
+    }
+  }
+}
+
+#about .box-act {
+  padding-right: .2rem;
+  background-color: white;
+  overflow: hidden;
+  .tit {
+    padding: .2rem;
+    border-bottom: 1px solid @silver;
+    font-size: @M;
+  }
+  .con{
+    .swiper-about{
+      .swiper-wrapper{
+        .swiper-slide{
+          .s-box{
+          width: 8rem;
+            height: 8rem;
+          display: block;
+          margin: 0 auto;
+            overflow: hidden;
+            .title{
+            font-size: @L;
+              height: 1rem;
+              line-height: 1rem;
+              font-weight: bolder;
+            }
+            .art{
+              font-size: .3rem;
+              line-height: .5rem;
+              text-align:justify;
+            }
+          }
+        }
+      }
+    }
   }
 }

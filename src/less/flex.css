@@ -3,6 +3,10 @@
   height: 5rem;
   background-color: white;
 }
+.box .column {
+  flex-direction: column;
+  height: 5rem;
+}
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -19,50 +23,91 @@
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
+.col-center {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.col-right {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+.col-between {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.col-around {
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
 .col {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
 }
-.column {
-  flex-direction: column;
-  height: 100%;
-}
 .col-1 {
   -webkit-box-flex: 0;
-  -ms-flex: 0 0 1.666667rem;
-  flex: 0 0 1.666667rem;
-  max-width: 1.666667rem;
+  -ms-flex: 0 0 16.66667%;
+  flex: 0 0 16.66667%;
+  max-width: 16.66667%;
 }
 .col-2 {
   -webkit-box-flex: 0;
-  -ms-flex: 0 0 3.333334rem;
-  flex: 0 0 3.333334rem;
-  max-width: 3.333334rem;
+  -ms-flex: 0 0 33.33334%;
+  flex: 0 0 33.33334%;
+  max-width: 33.33334%;
 }
 .col-3 {
   -webkit-box-flex: 0;
-  -ms-flex: 0 0 5rem;
-  flex: 0 0 5rem;
-  max-width: 5rem;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+  max-width: 50%;
 }
 .col-4 {
   -webkit-box-flex: 0;
-  -ms-flex: 0 0 6.666668rem;
-  flex: 0 0 6.666668rem;
-  max-width: 6.666668rem;
+  -ms-flex: 0 0 66.66668%;
+  flex: 0 0 66.66668%;
+  max-width: 66.66668%;
 }
 .col-5 {
   -webkit-box-flex: 0;
-  -ms-flex: 0 0 8.333335rem;
-  flex: 0 0 8.333335rem;
-  max-width: 8.333335rem;
+  -ms-flex: 0 0 83.33335%;
+  flex: 0 0 83.33335%;
+  max-width: 83.33335%;
 }
 .col-6 {
   -webkit-box-flex: 0;
-  -ms-flex: 0 0 10rem;
-  flex: 0 0 10rem;
-  max-width: 10rem;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+.avg-2 > .col,
+.avg-2 > div,
+.avg-2 > li {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.avg-2.bordered > .col:nth-of-type(2n):before,
+.avg-2 > div:nth-of-type(2n):before,
+.avg-3 > li:nth-of-type(2n):before {
+  display: none;
+}
+.avg-3 > .col,
+.avg-3 > div,
+.avg-3 > li {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 33.333333%;
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+}
+.avg-3.bordered > .col:nth-of-type(3n):before,
+.avg-3 > div:nth-of-type(3n):before,
+.avg-3 > li:nth-of-type(3n):before {
+  display: none;
 }
 .avg-4 > .col,
 .avg-4 > div,

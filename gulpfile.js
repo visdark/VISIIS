@@ -51,13 +51,15 @@ gulp.task('build-html',function(){
     gulp.src('./src/*.html')
         .pipe(debug({title: '正在移动静态文件'}))
         .pipe(htmlmin({collapseWhitespace: true ,
-            removeComments: true}))
+            removeComments: true,
+            minifyJS:true
+        }))
         .pipe(gulp.dest('./dist/'));
 });
 
 // 任务：压缩图片
 gulp.task('build-img', function(){
-     gulp.src('./src/img/*.png')
+     gulp.src('./src/img/*')
          .pipe(gulp.dest('./dist/img/'));
 });
 
