@@ -497,8 +497,9 @@ a {
 }
 .space {
   width: 10rem;
-  height: .3rem;
+  height: .2rem;
   overflow: hidden;
+  border-top: solid 1px #AAAAAA;
 }
 .ellipsis {
   text-overflow: ellipsis;
@@ -677,7 +678,7 @@ a.box-a img {
   overflow: hidden;
 }
 #news .box-act .con .col-left a.col .new-pics p {
-  font-size: 0.2rem;
+  font-size: 0.25rem;
   color: #AAAAAA;
   height: 0.3rem;
   line-height: 0.3rem;
