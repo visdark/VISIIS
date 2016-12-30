@@ -1,185 +1,173 @@
 @@include('include/header.html')
 <div id="content">
-    <!-- 首页轮播图  -->
+    <!-- 首页广告轮播  -->
     <section id="top-ad">
         <!-- 顶部焦点图 -->
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">  <img src="img/top-ad.png"/> </div>
-                <div class="swiper-slide">  <img src="img/top-ad.png"/> </div>
-                <div class="swiper-slide">  <img src="img/top-ad.png"/> </div>
-            </div>
-            <div class="top-notice">
-                <ul>
-                <li><span class="left"><i class="visiis vis-notice"></i></span>FXBTG关于2017油价的通告</li>
-                </ul>
-            </div>
-            <div class="swiper-pagination"></div>
+        <div class="ad-notice"> <div class="swiper-wrapper">
+            <ad-notice v-for="item in groceryList" v-bind:todo="item"></ad-notice></div>
         </div>
-
+            <div class="swiper-container">
+                <div class="swiper-wrapper" id="ad-pic">
+                    <ad-pic v-for="item in groceryList" v-bind:todo="item"></ad-pic>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
         <!-- 滑动原生插件swiper  -->
         <!-- 调用焦点图 -->
-        <script>
-            var swiper = new Swiper('.swiper-container', {
-                pagination: '.swiper-pagination',
-                spaceBetween: 30,
-                centeredSlides: true,
-                autoplay: 5000,
-                autoplayDisableOnInteraction: false,
-                loop: true
-            });
-        </script>
     </section>
-    <!-- 首页广告组  -->
+    <!-- 首页广告推送  -->
     <section id="ads">
-    <div class="space"></div>
-    <div class="flex box wrap avg-4 bordered">
-        <a class="col pro" href="#">
-            <img src="img/p-1.png"/>
-            <P>外汇</P>
-        </a>
-        <a class="col pro" href="#"><img src="img/p-2.png"/>
-        <P>贵金属</P>
-        </a>
-        <a class="col pro" href="#"><img src="img/p-3.png"/>
-            <P>能源</P></a>
-        <a class="col pro" href="#"><img src="img/p-4.png"/>
-            <P>股指</P></a>
-        <a class="col pro" href="#"><img src="img/p-5.png"/>
-            <P>农产品</P>
-        </a>
-        <a class="col pro" href="#"><img src="img/p-6.png"/>
-            <P>差价合约</P></a>
-        <a class="col pro" href="#"><img src="img/p-7.png"/>
-            <P>原油</P>
-        </a>
-        <a class="col pro" href="#"><img src="img/p-8.png"/>
-            <P>其他</P>
-        </a>
-    </div>
-    <div class="space"></div>
-    <div class="flex box bordered">
-        <div class="col">
-            <a class="ad" href="#"> <img src="img/top-ad-main.png"/>
-                <div class="con">
-            <h4>平台下载</h4>
-            <p>
-                提供电脑端、移动端MT4下载
-            </p> <span class="btn">了解详情<i class="visiis vis-notice"></i></span>
-        </div>
+        <div class="space"></div>
+        <div class="flex box wrap avg-4 bordered">
+            <a class="col pro" href="#">
+                <img src="img/p-1.png"/>
+                <P>外汇</P>
+            </a>
+            <a class="col pro" href="#"><img src="img/p-2.png"/>
+                <P>贵金属</P>
+            </a>
+            <a class="col pro" href="#"><img src="img/p-3.png"/>
+                <P>能源</P></a>
+            <a class="col pro" href="#"><img src="img/p-4.png"/>
+                <P>股指</P></a>
+            <a class="col pro" href="#"><img src="img/p-5.png"/>
+                <P>农产品</P>
+            </a>
+            <a class="col pro" href="#"><img src="img/p-6.png"/>
+                <P>差价合约</P></a>
+            <a class="col pro" href="#"><img src="img/p-7.png"/>
+                <P>原油</P>
+            </a>
+            <a class="col pro" href="#"><img src="img/p-8.png"/>
+                <P>其他</P>
             </a>
         </div>
-        <div class="col">
-            <div class="flex column bordered">
-            <div class="col"> <a class="ad" href="#"> <img src="img/top-ad-5.png"/>
-                <div class="con">
-                    <h4></h4>
-                    <p>
-                        全国第一家金融TV
-                    </p> <span class="btn">观看直播 <i class="visiis vis-video"></i></span>
-                </div>
-            </a></div>
+        <div class="space"></div>
+        <div class="flex box bordered">
             <div class="col">
-                <a class="ad" href="#"> <img src="img/top-ad-6.png"/>
+                <a class="ad" href="#"> <img src="img/top-ad-main.png"/>
                     <div class="con">
-                        <h4>财经日历</h4>
+                        <h4>平台下载</h4>
                         <p>
-                            最及时最可靠的动态播报
-                        </p> <span class="btn">立即查阅 <i class="visiis vis-notice"></i></span>
+                            提供电脑端、移动端MT4下载
+                        </p> <span class="btn">了解详情<i class="visiis vis-notice"></i></span>
                     </div>
                 </a>
-           </div>
-        </div>
-        </div>
-    </div>
-    <div class="space"></div>
-    <div class="flex box wrap avg-2 bordered">
-        <a class="col ad" href="#">
-            <img src="img/top-ad-1.png"/>
-            <div class="con">
-                <h4>合作加盟</h4>
-                <p>
-                    与FXBTG探寻新的发展机会
-                </p> <span class="btn">了解详情 <i class="visiis vis-notice"></i></span>
             </div>
-        </a>
-        <a class="col ad" href="#"> <img src="img/top-ad-2.png"/>
-            <div class="con">
-                <h4>每日汇评</h4>
-                <p>
-                    我们追逐梦想，一往无前
-                </p> <span class="btn">今日分析 <i class="visiis vis-notice"></i></span>
+            <div class="col">
+                <div class="flex column bordered">
+                    <div class="col"><a class="ad" href="#"> <img src="img/top-ad-5.png"/>
+                        <div class="con">
+                            <h4></h4>
+                            <p>
+                                全国第一家金融TV
+                            </p> <span class="btn">观看直播 <i class="visiis vis-video"></i></span>
+                        </div>
+                    </a></div>
+                    <div class="col">
+                        <a class="ad" href="#"> <img src="img/top-ad-6.png"/>
+                            <div class="con">
+                                <h4>财经日历</h4>
+                                <p>
+                                    最及时最可靠的动态播报
+                                </p> <span class="btn">立即查阅 <i class="visiis vis-notice"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
-        </a>
-        <a class="col ad" href="#"> <img src="img/top-ad-3.png"/><div class="con">
-            <h4>账户类型</h4>
-            <p>
-                两种账户类型供君选择
-            </p>  <span class="btn">立即开户 <i class="visiis vis-notice"></i></span>
         </div>
-            <a class="col ad" href="#"><img src="img/top-ad-4.png"/>
+        <div class="space"></div>
+        <div class="flex box wrap avg-2 bordered">
+            <a class="col ad" href="#">
+                <img src="img/top-ad-1.png"/>
                 <div class="con">
-                    <h4>视频中心</h4>
+                    <h4>合作加盟</h4>
                     <p>
-                        最前沿的视觉盛宴
-                    </p><span class="btn">观看视频 <i class="visiis vis-video"></i></span>
-                </div></a>
-    </div>
-    <div class="space"></div>
+                        与FXBTG探寻新的发展机会
+                    </p> <span class="btn">了解详情 <i class="visiis vis-notice"></i></span>
+                </div>
+            </a>
+            <a class="col ad" href="#"> <img src="img/top-ad-2.png"/>
+                <div class="con">
+                    <h4>每日汇评</h4>
+                    <p>
+                        我们追逐梦想，一往无前
+                    </p> <span class="btn">今日分析 <i class="visiis vis-notice"></i></span>
+                </div>
+            </a>
+            <a class="col ad" href="#"> <img src="img/top-ad-3.png"/>
+                <div class="con">
+                    <h4>账户类型</h4>
+                    <p>
+                        两种账户类型供君选择
+                    </p>  <span class="btn">立即开户 <i class="visiis vis-notice"></i></span>
+                </div>
+                <a class="col ad" href="#"><img src="img/top-ad-4.png"/>
+                    <div class="con">
+                        <h4>视频中心</h4>
+                        <p>
+                            最前沿的视觉盛宴
+                        </p><span class="btn">观看视频 <i class="visiis vis-video"></i></span>
+                    </div>
+                </a>
+        </div>
+        <div class="space"></div>
     </section>
-    <!-- 首页新闻组  -->
+    <!-- 首页新闻活动  -->
     <section id="news">
-    <div class="box-act">
-        <div class="tit"><i class="visiis vis-notice"></i> 精彩活动</div>
-        <div class="con">
-            <div class="flex wrap col-left">
-                <a class="col col-2" href="#">
-                    <div class="new-pics">
-                        <img src="img/new-demo.jpg"/>
-                        <h4>入金送 iphone 7</h4>
-                        <p>FXBTG 感恩回馈新老客户</p>
-                    </div>
-                </a>
-                <a class="col col-2" href="#">
-                    <div class="new-pics">
-                        <img src="img/new-demo.jpg"/>
-                        <h4>入金送 iphone 7</h4>
-                        <p>FXBTG 感恩回馈新老客户</p>
-                    </div>
-                </a>
-                <a class="col col-2" href="#">
-                    <div class="new-pics">
-                        <img src="img/new-demo.jpg"/>
-                        <h4>入金送 iphone 7</h4>
-                        <p>FXBTG 感恩回馈新老客户</p>
-                    </div>
-                </a>
-                <a class="col col-2" href="#">
-                    <div class="new-pics">
-                        <img src="img/new-demo.jpg"/>
-                        <h4>入金送 iphone 7</h4>
-                        <p>FXBTG 感恩回馈新老客户</p>
-                    </div>
-                </a>
-                <a class="col col-2" href="#">
-                    <div class="new-pics">
-                        <img src="img/new-demo.jpg"/>
-                        <h4>入金送 iphone 7</h4>
-                        <p>FXBTG 感恩回馈新老客户</p>
-                    </div>
-                </a>
-                <a class="col col-2" href="#">
-                    <div class="new-pics">
-                        <img src="img/new-demo.jpg"/>
-                        <h4>入金送 iphone 7</h4>
-                        <p>FXBTG 感恩回馈新老客户</p>
-                    </div>
-                </a>
+        <div class="box-act">
+            <div class="tit"><i class="visiis vis-notice"></i> 精彩活动</div>
+            <div class="con">
+                <div class="flex wrap col-left">
+                    <a class="col col-2" href="#">
+                        <div class="new-pics">
+                            <img src="img/new-demo.jpg"/>
+                            <h4>入金送 iphone 7</h4>
+                            <p>FXBTG 感恩回馈新老客户</p>
+                        </div>
+                    </a>
+                    <a class="col col-2" href="#">
+                        <div class="new-pics">
+                            <img src="img/new-demo.jpg"/>
+                            <h4>入金送 iphone 7</h4>
+                            <p>FXBTG 感恩回馈新老客户</p>
+                        </div>
+                    </a>
+                    <a class="col col-2" href="#">
+                        <div class="new-pics">
+                            <img src="img/new-demo.jpg"/>
+                            <h4>入金送 iphone 7</h4>
+                            <p>FXBTG 感恩回馈新老客户</p>
+                        </div>
+                    </a>
+                    <a class="col col-2" href="#">
+                        <div class="new-pics">
+                            <img src="img/new-demo.jpg"/>
+                            <h4>入金送 iphone 7</h4>
+                            <p>FXBTG 感恩回馈新老客户</p>
+                        </div>
+                    </a>
+                    <a class="col col-2" href="#">
+                        <div class="new-pics">
+                            <img src="img/new-demo.jpg"/>
+                            <h4>入金送 iphone 7</h4>
+                            <p>FXBTG 感恩回馈新老客户</p>
+                        </div>
+                    </a>
+                    <a class="col col-2" href="#">
+                        <div class="new-pics">
+                            <img src="img/new-demo.jpg"/>
+                            <h4>入金送 iphone 7</h4>
+                            <p>FXBTG 感恩回馈新老客户</p>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
     <div class="space"></div>
+    <!-- 首页关于我们  -->
     <section id="about">
         <div class="box-act">
             <div class="tit"><i class="visiis vis-notice"></i> 关于FXBTG</div>
@@ -190,18 +178,19 @@
                             <div class="s-box">
 
                                 <div class="flex col-around">
-                                    <div class="col col-3"> <img src="img/favicon.png"/></div>
-                                    </div>
-                            <div class="title">
-                               我们追逐梦想 ，一往无前
-                            </div>
-                            <div class="art">
-                                FXBTG BROKER 和大旗金融是BTG GROUP 旗下注册商标，我们提供全球金融市场的在线交易包括：外汇，贵金属，原油，股指CFD差价合约等。关于我们的公司简介是老版本不正确的，请策划部提供准确的。
-                            </div>
+                                    <div class="col col-3"><img src="img/favicon.png"/></div>
+                                </div>
+                                <div class="title">
+                                    我们追逐梦想 ，一往无前
+                                </div>
+                                <div class="art">
+                                    FXBTG BROKER 和大旗金融是BTG GROUP
+                                    旗下注册商标，我们提供全球金融市场的在线交易包括：外汇，贵金属，原油，股指CFD差价合约等。关于我们的公司简介是老版本不正确的，请策划部提供准确的。
+                                </div>
                             </div>
                         </div>
-                        <div class="swiper-slide">  2</div>
-                        <div class="swiper-slide">  3 </div>
+                        <div class="swiper-slide"> 2</div>
+                        <div class="swiper-slide"> 3</div>
                     </div>
                     <!-- Add Arrows -->
                     <div class="swiper-button-next"></div>
@@ -220,6 +209,28 @@
             </div>
         </div>
     </section>
+    <div class="space"></div>
+    <!-- 首页金融推送  -->
+    <section id="day">
+        <div class="tit"><i class="visiis vis-notice"></i> 金融推送</div>
+        <div class="con">
+            <div class="day flex wrap">
+                <div class="col col-1">每日汇评</div>
+                <div class="col col-2"><span>16年12月12日</span><span><b>December</b> 2016</span></div>
+                <div class="col col-3"><span>16</span></div>
+            </div>
+            <div class="day-con">
+                <h3>FXBTG:冻产协议达成，油价暴涨10%</h3>
+                <h4>行情回顾</h4>
+                <p>
+                    昨天（11月30日），受欧佩克达成减产协议推动，油价暴涨10%，使得全球风险资产再次受到追捧，黄金、日元等避险资产严重受到打压，其中黄金价格跌至10个月低位，美元兑日元日内急升1.9%，至3月2日以来最高114.53。此外，于昨晚间公布的美国11月ADP就业人数增加了21.6万人，数据公布后，市场对周五非农就业数据预期表示乐观，美元大幅上扬，，再度打压金银价格。</p>
+                <h4>市场概况</h4>
+                <p>
+                    昨天（11月30日），受欧佩克达成减产协议推动，油价暴涨10%，使得全球风险资产再次受到追捧，黄金、日元等避险资产严重受到打压，其中黄金价格跌至10个月低位，美元兑日元日内急升1.9%，至3月2日以来最高114.53。此外，于昨晚间公布的美国11月ADP就业人数增加了21.6万人，数据公布后，市场对周五非农就业数据预期表示乐观，美元大幅上扬，，再度打压金银价格。</p>
 
+            </div>
+        </div>
+    </section>
+    <div class="space"></div>
 </div>
 @@include('include/footer.html')

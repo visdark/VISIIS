@@ -34,43 +34,55 @@ white-space: nowrap;
 overflow: hidden;}
 //强制样式表倍率
 // 字体大小重置
-h1{color: @red;font-size: @XXL;}
-h2{color: @blue;font-size: @XL;}
-h3{color: @green;font-size: @L;}
+h1{font-size: @XXL;}
+h2{font-size: @XL;}
+h3{font-size: @L;}
 h4{font-size: @M;}
-h5{color: @blue;font-size: @S;}
-h6{color: @green;font-size: @XS;}
+h5{font-size: @S;}
+h6{font-size: @XS;}
 // 主页面居中
-#content {
+#content ,#foot ,#header{
   position: relative;
   width: 10rem;
   margin: 0 auto;
   font-size: 12px;
 }
 // 顶部广告条 样式表
-#top-ad {
-  .top-notice{
+  .ad-notice{
     position: absolute;
     top: 0;
     width: 10rem;
-    height: 5rem;
+    height: .8rem;
     color: black;
     display: block;
     z-index: 100;
     text-align: center;
-    ul {
-      padding: .1rem;
-      background-color: @silver;
-      margin: .1rem 1rem;
+    overflow: hidden;
+margin: .1rem 0;
+    .swiper-wrapper{
+      width: 8rem;
+      height: .6rem;
+      line-height: .6rem;
+      display: block;
+      margin: 0 auto;
       border-radius: 100px;
-      li{
-        .ellipsis;
-        height: (@S * 1.5);
-        line-height: (@S * 1.5);
-      }
+      .swiper-slide {
+        font-size: @S;
+        background-color: @silver;
+        border-radius: 100px;
+        span.left{
+          float: left;
+          width: 10%;
+        }
+        a{
+          width: 90%;
+          color: @black;
+        }
+       }
     }
-  }
-}
+    }
+
+
 .left{
   float: left;
 }
@@ -80,14 +92,6 @@ h6{color: @green;font-size: @XS;}
 .visiis {
   font-size: inherit;
   }
-* + h1,
-* + h2,
-* + h3,
-* + h4,
-* + h5,
-* + h6 {
-  margin-top: .5em;
-}
 // 图片排版
 .box a.pro{
   img{
@@ -178,7 +182,8 @@ a.box-a{
               height: auto;
             }
             h4{
-                font-size: @M;
+padding-top: .2rem;
+              font-size: @M;
               height: 0.6rem;
               line-height: 0.6rem;
               .ellipsis;
@@ -190,6 +195,7 @@ a.box-a{
               height: 0.3rem;
               line-height: 0.3rem;
               .ellipsis;
+              padding-bottom: .2rem;
             }
           }
       }
@@ -198,7 +204,6 @@ a.box-a{
 }
 
 #about .box-act {
-  padding-right: .2rem;
   background-color: white;
   overflow: hidden;
   .tit {
@@ -207,6 +212,7 @@ a.box-a{
     font-size: @M;
   }
   .con{
+    padding-right: .2rem;
     .swiper-about{
       .swiper-wrapper{
         .swiper-slide{
@@ -232,4 +238,140 @@ a.box-a{
       }
     }
   }
+}
+// 金融推送
+#day{
+  background-color: white;
+  overflow: hidden;
+  .tit {
+    padding: .2rem;
+    border-bottom: 1px solid @silver;
+    font-size: @M;
+  }
+  .con{
+     .day{
+       padding-top: .2rem;
+       height: 1rem;
+       overflow: hidden;
+       .col-1{background-color: @color;
+         text-align: center;
+         font-size: @M;
+         line-height: 1rem;
+         height: 1rem;
+         color: white;
+       }
+       .col-2{
+         font-size: @M;
+         color: @black;
+         span{
+         line-height: .5rem;
+           padding-right:.2rem ;
+         height: .5rem;
+         float: right;
+           display: block;
+         }
+       }
+       .col-3{
+         border-bottom: solid .1rem @color;
+         span{
+           font-size: .5rem;
+           min-width: .6rem;
+           padding: .2rem;
+           color: white;
+           float: left;
+           background-color: @color;
+         }
+       }
+       padding-bottom: .2rem;
+      }
+    .day-con{
+      padding: .2rem;
+      h3{
+        padding-top:.3rem;
+        line-height: .8rem;
+        padding-bottom:.3rem;
+      }
+      h4{
+        background-color: @silver;
+        padding: .2rem;
+      }
+      p{
+        padding-top: .2rem;
+        font-size: .3rem;
+        line-height: .5rem;
+        text-align:justify;
+        padding-bottom: .2rem;
+      }
+    }
+  }
+}
+// 16-12-26 footer样式
+#foot{
+  position: relative;
+  height: 1.6rem;
+  .navbar{
+  position: fixed;
+  width: 10rem;
+  height: 1.6rem;
+  background-color: @black;
+  bottom: 0;
+  z-index: 9999999;  text-align: center;
+    a.col {
+      color: white;
+      i {
+        font-size: .8rem;
+        line-height: 1rem;
+        height: 1rem;
+      }
+      h4 {
+        font-size: .3rem;
+        line-height: .5rem;
+        height: .5rem;
+      }
+    }
+a.col.active{
+  color: @color;
+}
+  }
+}
+@media all and (orientation : landscape) {
+  //横屏时候CSS纠正
+  #header ,#content , #foot{display: none;}
+  .a-box{display: block;}
+}
+
+@media all and (orientation : portrait){
+  //竖屏时候CSS纠正
+  #header ,#content , #foot{display: block;}
+  .a-box{display: none;}
+}
+.a-box{
+  position: fixed;
+  color: white;
+  width: 8rem;
+  height: 1rem;
+  left: 50%;
+  top: 50%;
+  background-color: #d42e28;
+  margin-left: -4rem;
+  margin-top: -.5rem;
+  z-index: 9999999;
+  border-radius: 10px;
+  .alert{
+    font-size: .3rem;
+    height: .5rem;
+    line-height: .5rem;
+    text-align: center;
+    h4{
+      font-size: .3rem;
+      height: .5rem;
+      line-height: .5rem;
+    }
+  }
+}
+
+// 下拉时候顶部导航才会出现
+
+#top{
+  background: @color;
 }
