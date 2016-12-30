@@ -563,7 +563,11 @@ h6 {
 }
 .ad-notice .swiper-wrapper .swiper-slide a {
   width: 90%;
+  line-height: 22px;
   color: #111111;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .left {
   float: left;
