@@ -536,7 +536,7 @@ h6 {
   position: absolute;
   top: 0;
   width: 10rem;
-  height: .8rem;
+  height: .6rem;
   color: black;
   display: block;
   z-index: 100;
@@ -546,8 +546,8 @@ h6 {
 }
 .ad-notice .swiper-wrapper {
   width: 8rem;
-  height: .6rem;
-  line-height: .6rem;
+  height: .4rem;
+  line-height: .4rem;
   display: block;
   margin: 0 auto;
   border-radius: 100px;
