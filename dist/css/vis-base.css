@@ -299,28 +299,38 @@ h6 {
   margin: 0 auto;
   font-size: 12px;
 }
-#top-ad .top-notice {
+.ad-notice {
   position: absolute;
   top: 0;
   width: 10rem;
-  height: 5rem;
+  height: .8rem;
   color: black;
   display: block;
   z-index: 100;
   text-align: center;
+  overflow: hidden;
+  margin: .1rem 0;
 }
-#top-ad .top-notice ul {
-  padding: .1rem;
-  background-color: #DDDDDD;
-  margin: .1rem 1rem;
+.ad-notice .swiper-wrapper {
+  width: 8rem;
+  height: .6rem;
+  line-height: .6rem;
+  display: block;
+  margin: 0 auto;
   border-radius: 100px;
 }
-#top-ad .top-notice ul li {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  height: 0.375rem;
-  line-height: 0.375rem;
+.ad-notice .swiper-wrapper .swiper-slide {
+  font-size: 0.25rem;
+  background-color: #DDDDDD;
+  border-radius: 100px;
+}
+.ad-notice .swiper-wrapper .swiper-slide span.left {
+  float: left;
+  width: 10%;
+}
+.ad-notice .swiper-wrapper .swiper-slide a {
+  width: 90%;
+  color: #111111;
 }
 .left {
   float: left;
@@ -513,7 +523,7 @@ a.box-a img {
 }
 #day .con .day .col-3 span {
   font-size: .5rem;
-  min-width: .5rem;
+  min-width: .6rem;
   padding: .2rem;
   color: white;
   float: left;
@@ -610,4 +620,7 @@ a.box-a img {
   font-size: .3rem;
   height: .5rem;
   line-height: .5rem;
+}
+#top {
+  background: #ff6600;
 }
