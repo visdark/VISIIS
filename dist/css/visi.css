@@ -536,7 +536,7 @@ h6 {
   position: absolute;
   top: 0;
   width: 10rem;
-  height: .8rem;
+  height: .6rem;
   color: black;
   display: block;
   z-index: 100;
@@ -546,8 +546,7 @@ h6 {
 }
 .ad-notice .swiper-wrapper {
   width: 8rem;
-  height: .6rem;
-  line-height: .6rem;
+  height: .4rem;
   display: block;
   margin: 0 auto;
   border-radius: 100px;
@@ -556,14 +555,21 @@ h6 {
   font-size: 0.25rem;
   background-color: #DDDDDD;
   border-radius: 100px;
+  display: flex;
+  height: 22px;
+  align-items: center;
 }
 .ad-notice .swiper-wrapper .swiper-slide span.left {
   float: left;
-  width: 10%;
+  width: 8%;
 }
 .ad-notice .swiper-wrapper .swiper-slide a {
-  width: 90%;
+  width: 92%;
+  font-size: .3rem;
   color: #111111;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .left {
   float: left;

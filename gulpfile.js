@@ -118,7 +118,7 @@ gulp.task('fileinclude', function() {
 
 //检视less改动
 gulp.task('develop',function(callback){
-    runSequence('fxbtg-data',['build-img', 'build-less','fileinclude'],['stylesheets','javascripts','build-html'], callback);
+    runSequence('fxbtg-data',['build-img', 'build-less','fileinclude','javascripts'],['stylesheets','build-html'], callback);
     gulp.watch('./src/less/*.less', ['build-less']);
     gulp.watch('./src/html/**/*.html', ['fileinclude']);
     gulp.watch('./src/html/vis/*.html', ['fxbtg-data']);
