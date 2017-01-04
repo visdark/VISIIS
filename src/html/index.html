@@ -3,15 +3,17 @@
     <!-- 首页广告轮播  -->
     <section id="top-ad">
         <!-- 顶部焦点图 -->
-        <div class="ad-notice"> <div class="swiper-wrapper">
-            <ad-notice v-for="item in groceryList" v-bind:todo="item"></ad-notice></div>
-        </div>
-            <div class="swiper-container">
-                <div class="swiper-wrapper" id="ad-pic">
-                    <ad-pic v-for="item in groceryList" v-bind:todo="item"></ad-pic>
-                </div>
-                <div class="swiper-pagination"></div>
+        <div class="ad-notice">
+            <div class="swiper-wrapper">
+                <ad-notice v-for="item in groceryList" v-bind:todo="item"></ad-notice>
             </div>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper" id="ad-pic">
+                <ad-pic v-for="item in groceryList" v-bind:todo="item"></ad-pic>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
         <!-- 滑动原生插件swiper  -->
         <!-- 调用焦点图 -->
     </section>
@@ -65,8 +67,7 @@
                 <div class="swiper-about">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                           <div class="s-box">
-
+                            <div class="s-box">
                                 <div class="flex col-around">
                                     <div class="col col-3"><img src="img/favicon.png"/></div>
                                 </div>
@@ -95,7 +96,6 @@
                         loop: true
                     });
                 </script>
-
             </div>
         </div>
     </section>
@@ -103,9 +103,7 @@
     <section id="day">
         <!-- 首页金融推送  -->
         <div class="tit"><i class="visiis vis-notice"></i> 金融推送</div>
-
-            <day v-for="item in groceryList" v-bind:todo="item"></day>
-
+        <day v-for="item in groceryList" v-bind:todo="item"></day>
     </section>
     <div class="space"></div>
 </div>

@@ -28,6 +28,7 @@ var gulp = require('gulp'), //构建gulp
     ' * @license <%= pkg.license %>',
     ' */',
     ''].join('\n'); //版权说明
+    babel = require('gulp-babel');
 
 //动态属性值调用
 gulp.task('fxbtg-data', function(){
@@ -116,12 +117,27 @@ gulp.task('fileinclude', function() {
         .pipe(gulp.dest('./src/'));
 });
 
-//检视less改动
+//主要执行流程
 gulp.task('develop',function(callback){
-    runSequence('fxbtg-data',['build-img', 'build-less','fileinclude','javascripts'],['stylesheets','build-html'], callback);
+    runSequence('fxbtg-data',['es2015','build-img', 'build-less','fileinclude','javascripts'],['stylesheets','build-html'], callback);
     gulp.watch('./src/less/*.less', ['build-less']);
     gulp.watch('./src/html/**/*.html', ['fileinclude']);
     gulp.watch('./src/html/vis/*.html', ['fxbtg-data']);
+});
+
+// ES6语法转换
+gulp.task('es2015', function() {
+    gulp.src('./src/js/vis4-*.js')
+        .pipe(babel({
+            "presets": ["es2015"]
+        }))
+        .pipe(concat('router.js'))
+        .pipe(gulp.dest('./dist/js'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(uglify())
+        .pipe(header(banner, { pkg : pkg } ))
+        .pipe(debug({title: '正在压缩js文件'}))
+        .pipe(gulp.dest('./dist/js'));
 });
 
 //任务：浏览器测试
@@ -132,7 +148,6 @@ gulp.task('browser', function() {
         }
     });
 });
-
 //任务：清除多余css
 gulp.task('clean', function() {
     return gulp.src(['./dist/css/visi.css','./dist/css/visi.min.css'], {read: false})
