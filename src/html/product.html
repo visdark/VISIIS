@@ -1,5 +1,21 @@
 @@include('include/header.html')
 <div id="content">
+   <section id="ads">
+      <div class="flex box wrap avg-4 bordered" id="ad8">
+         <ad8 v-for="item in groceryList" v-bind:todo="item"></ad8>
+      </div>
+      <div class="space"></div>
+   </section>
+   <div id="prohtml">
+      <h1>
+         This is component A
+      </h1>
+
+         <router-view></router-view>
+
+
+   </div>
    开始新的内容
+   <div id="app101"></div>
 </div>
 @@include('include/footer.html')

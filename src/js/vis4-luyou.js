@@ -2,11 +2,13 @@
 
 // 1. 定义（路由）组件。
 // 可以从其他文件 import 进来
-const Foo = { template: `
-<div>foo111111111111111
+const pro = { template: `
+<transition name="fade">
+<div class="pro">
+产品介绍 {{ $route.params.id }}
 
-22323
-23123</div>
+</div>
+</transition>
 `};
 const Bar = { template: '<div>bar</div>' };
 const User = {
@@ -20,9 +22,8 @@ const User = {
 // 或者，只是一个组件配置对象。
 // 我们晚点再讨论嵌套路由。
 const routes = [
-    { path: '/foo', component: Foo },
-    { path: '/bar', component: Bar },
-    { path: '/user/:id', component: User }
+    { path: '/:id', component: pro },
+    { path: '/go', component: Bar }
 ];
 
 // 3. 创建 router 实例，然后传 `routes` 配置
@@ -36,6 +37,40 @@ const router = new VueRouter({
 // 从而让整个应用都有路由功能
 const app = new Vue({
     router
-}).$mount('#app101');
+}).$mount('#prohtml');
 
 // 现在，应用已经启动了！
+new Vue({
+    router,
+    template: `
+    <div id="app101">
+      <h1>Transitions</h1>
+ <ul>
+        <li><router-link to="/">/</router-link></li>
+        <li><router-link to="/1">/1</router-link></li>
+        <li><router-link to="/2">/2</router-link></li>
+        <li><router-link to="/go">/go</router-link></li>
+      </ul>
+      <transition name="fade" mode="out-in">
+        <router-view class="view"></router-view>
+      </transition>
+    </div>
+
+  <div class="post">
+    <div class="loading" v-if="loading">
+      Loading...
+    </div>
+
+    <div v-if="error" class="error">
+      {{ error }}
+    </div>
+
+    <div v-if="post" class="content">
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.body }}</p>
+    </div>
+  </div>
+
+  `
+}).$mount('#app101');
+

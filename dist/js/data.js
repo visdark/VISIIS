@@ -46,14 +46,14 @@ var app4 = new Vue({
     el: '#ad8',
     data: {
         groceryList: [
-            { pic: 'img/p-1.png',tit: '外汇',link: 'product.html' ,con: '外汇的介绍'},
-            { pic: 'img/P-2.png',tit: '贵金属',link: 'product.html' ,con: '贵金属的介绍'},
-            { pic: 'img/p-3.png',tit: '能源',link: 'product.html' ,con: '能源的介绍'},
-            { pic: 'img/p-4.png',tit: '股指',link: 'product.html' ,con: '外汇的介绍'},
-            { pic: 'img/P-5.png',tit: '农产品',link: 'product.html' ,con: '贵金属的介绍'},
-            { pic: 'img/p-6.png',tit: '差价合约',link: 'product.html' ,con: '能源的介绍'},
-            { pic: 'img/p-7.png',tit: '原油',link: 'product.html' ,con: '外汇的介绍'},
-            { pic: 'img/P-8.png',tit: '其他',link: 'product.html' ,con: '贵金属的介绍'}
+            { pic: 'img/p-1.png',tit: '外汇',link: 'product.html#/1' ,con: '外汇的介绍'},
+            { pic: 'img/P-2.png',tit: '贵金属',link: 'product.html#/2' ,con: '贵金属的介绍'},
+            { pic: 'img/p-3.png',tit: '能源',link: 'product.html#/3' ,con: '能源的介绍'},
+            { pic: 'img/p-4.png',tit: '股指',link: 'product.html#/4' ,con: '外汇的介绍'},
+            { pic: 'img/P-5.png',tit: '农产品',link: 'product.html#/5' ,con: '贵金属的介绍'},
+            { pic: 'img/p-6.png',tit: '差价合约',link: 'product.html#/6' ,con: '能源的介绍'},
+            { pic: 'img/p-7.png',tit: '原油',link: 'product.html#/7' ,con: '外汇的介绍'},
+            { pic: 'img/P-8.png',tit: '其他',link: 'product.html#/8' ,con: '贵金属的介绍'}
         ]
     }
 });
