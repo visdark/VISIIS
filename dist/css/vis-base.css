@@ -630,3 +630,12 @@ a.box-a img {
 #top {
   background: #ff6600;
 }
+#html {
+  background-color: white;
+  overflow: hidden;
+}
+#html .tit {
+  padding: .2rem;
+  border-bottom: 1px solid #DDDDDD;
+  font-size: 0.33rem;
+}
